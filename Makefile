@@ -1,4 +1,4 @@
-
+SRC = *.tex
 TEX = pdflatex
 BIBTEX = bibtex
 VIEWER = evince
@@ -18,9 +18,9 @@ view:  $(MAIN).pdf
 	@$(VIEWER) $(MAIN).pdf >> /dev/null 2>&1 &
 
 edit:
-	@$(EDITOR) $(MAIN).tex >> /dev/null 2>&1 &
+	@$(EDITOR) *.tex >> /dev/null 2>&1 &
 
-$(MAIN).pdf: $(MAIN).tex
+$(MAIN).pdf: $(SRC)
 	$(TEX) $(MAIN).tex
 	$(TEX) $(MAIN).tex
 	$(TEX) $(MAIN).tex
